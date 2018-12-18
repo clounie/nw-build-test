@@ -24,6 +24,16 @@ test {
     systemProperties 'property': 'value'
 }
 
+sonarqube {
+    properties {
+        //
+        //  Configure where to find the test reports.
+        //  See: https://docs.sonarqube.org/display/PLUG/Code+Coverage+by+Unit+Tests+for+Java+Project
+        //
+        property "sonar.junit.reportPaths", "$buildDir/test-results/test"
+    }
+}
+
 uploadArchives {
     repositories {
        flatDir {
