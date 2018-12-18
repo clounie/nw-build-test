@@ -12,6 +12,6 @@ public class TestMyTestClass {
 
   @Test
   public void shouldFail () {
-    Assert.assertFalse(false); //
+    Assert.assertFalse(false); // wtf jenkins
   }
 }
