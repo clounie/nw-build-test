@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'eclipse'
+    id "org.sonarqube" version "2.6"
 }
 version = '1.0'
 jar {
@@ -21,6 +22,16 @@ dependencies {
 
 test {
     systemProperties 'property': 'value'
+}
+
+sonarqube {
+    properties {
+        //
+        //  Configure where to find the test reports.
+        //  See: https://docs.sonarqube.org/display/PLUG/Code+Coverage+by+Unit+Tests+for+Java+Project
+        //
+        property "sonar.junit.reportPaths", "$buildDir/test-results/test"
+    }
 }
 
 uploadArchives {

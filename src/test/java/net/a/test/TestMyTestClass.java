@@ -9,4 +9,9 @@ public class TestMyTestClass {
   public void shouldReturnString () {
     Assert.assertEquals("a", MyTestClass.getAString());
   }
+
+  @Test
+  public void shouldFail () {
+    Assert.assertFalse(true);
+  }
 }
